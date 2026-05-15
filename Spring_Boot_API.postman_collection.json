@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "12345678-1234-1234-1234-123456789abc",
+		"name": "Spring Boot User API",
+		"description": "Collection for Spring Boot User Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "1. Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Lấy danh sách tất cả users"
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						},
+						"description": "Lấy thông tin user theo ID"
+					},
+					"response": []
+				},
+				{
+					"name": "3. Create User - Nguyen Van A",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nguyen Van A\",\n    \"email\": \"nguyenvana@example.com\",\n    \"phone\": \"0123456789\",\n    \"address\": \"Ha Noi\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Tạo user mới - Nguyen Van A"
+					},
+					"response": []
+				},
+				{
+					"name": "4. Create User - Tran Thi B",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tran Thi B\",\n    \"email\": \"tranthib@example.com\",\n    \"phone\": \"0987654321\",\n    \"address\": \"Ho Chi Minh\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Tạo user mới - Tran Thi B"
+					},
+					"response": []
+				},
+				{
+					"name": "5. Create User - Le Van C",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Le Van C\",\n    \"email\": \"levanc@example.com\",\n    \"phone\": \"0111222333\",\n    \"address\": \"Can Tho\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Tạo user mới - Le Van C"
+					},
+					"response": []
+				},
+				{
+					"name": "6. Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nguyen Van A Updated\",\n    \"email\": \"nguyenvana.updated@example.com\",\n    \"phone\": \"0999999999\",\n    \"address\": \"Da Nang\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						},
+						"description": "Cập nhật thông tin user"
+					},
+					"response": []
+				},
+				{
+					"name": "7. Search User By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/search?email=tranthib@example.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "tranthib@example.com"
+								}
+							]
+						},
+						"description": "Tìm user theo email"
+					},
+					"response": []
+				},
+				{
+					"name": "8. Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						},
+						"description": "Xóa user theo ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Các API endpoints cho User Management"
+		},
+		{
+			"name": "Test Cases",
+			"item": [
+				{
+					"name": "Test - Invalid Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test User\",\n    \"email\": \"invalid-email\",\n    \"phone\": \"0123456789\",\n    \"address\": \"Ha Noi\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Test validation - Email không hợp lệ (Expected: 400 Bad Request)"
+					},
+					"response": []
+				},
+				{
+					"name": "Test - Missing Name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"email\": \"test@example.com\",\n    \"phone\": \"0123456789\",\n    \"address\": \"Ha Noi\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Test validation - Name bị thiếu (Expected: 400 Bad Request)"
+					},
+					"response": []
+				},
+				{
+					"name": "Test - Duplicate Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Duplicate User\",\n    \"email\": \"nguyenvana@example.com\",\n    \"phone\": \"0123456789\",\n    \"address\": \"Ha Noi\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Test duplicate email (Expected: 400 Bad Request)\nChạy sau khi đã tạo user với email nguyenvana@example.com"
+					},
+					"response": []
+				},
+				{
+					"name": "Test - User Not Found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"999"
+							]
+						},
+						"description": "Test user không tồn tại (Expected: 404 Not Found)"
+					},
+					"response": []
+				},
+				{
+					"name": "Test - Delete Non-Existing User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"999"
+							]
+						},
+						"description": "Test xóa user không tồn tại (Expected: 404 Not Found)"
+					},
+					"response": []
+				}
+			],
+			"description": "Các test cases để kiểm tra validation và error handling"
+		}
+	]
+}
