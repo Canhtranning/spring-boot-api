@@ -17,12 +17,8 @@ WORKDIR /app
 # Copy JAR file từ build stage
 COPY --from=build /app/target/spring-boot-api-1.0.0.jar app.jar
 
-# Expose port
+# Expose port (Railway sẽ override bằng $PORT)
 EXPOSE 8080
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/api/users || exit 1
-
-# Run application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run application - dùng $PORT từ Railway
+ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT:-8080} -Xmx300m -jar app.jar"]
