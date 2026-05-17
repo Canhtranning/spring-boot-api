@@ -5,4 +5,4 @@ nixPkgs = ["jdk17_headless", "maven"]
 cmds = ["mvn clean package -DskipTests"]
 
 [start]
-cmd = "java -Dserver.port=$PORT -Xmx300m -jar target/spring-boot-api-1.0.0.jar"
+cmd = "java -Dspring.profiles.active=prod -Dserver.port=$PORT -Xmx300m -jar target/spring-boot-api-1.0.0.jar"
